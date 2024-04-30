@@ -32,7 +32,7 @@ func main() {
 	http.HandleFunc("/suggestions", suggestionsHandler)
 	// Start the HTTP server
 	fmt.Println("Server listening on port 9090...")
-	err := http.ListenAndServe(":9096", nil)
+	err := http.ListenAndServe(":9090", nil)
 	if err != nil {
 		fmt.Println("Error starting server:", err)
 	}
@@ -137,6 +137,6 @@ func calculateScore(city City, searchTerm, latitude, longitude string) float64 {
 	} else if lat == latitude || long == longitude {
 		return 0.6
 	} else {
-		return 0.5 // Adjust this to implement actual scoring logic
+		return 0.5
 	}
 }
