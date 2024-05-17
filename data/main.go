@@ -93,7 +93,6 @@ func suggestionsHandler(w http.ResponseWriter, r *http.Request) {
 func searchForSuggestions(searchTerm, latitude, longitude string) []Suggestion {
 	var suggestions []Suggestion
 
-	// Your search logic goes here.
 	// This is a simplified example where we only check if the city name contains the search term.
 	for _, city := range cities {
 		if strings.Contains(strings.ToLower(city.Name), strings.ToLower(searchTerm)) {
